@@ -11,7 +11,6 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
-    @IBOutlet weak var campusImageView: UIImageView!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var notifySwitch: UISwitch!
     @IBOutlet weak var roleSegmentedControl: UISegmentedControl!
@@ -22,9 +21,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
         titleLabel.text = "Campus Companion"
-        campusImageView.image = UIImage(systemName: "building.2.fill")
-        campusImageView.tintColor = .systemBlue
-        campusImageView.accessibilityLabel = "Campus buildings"
     }
 
     @IBAction func exploreButtonTapped(_ sender: UIButton) {
