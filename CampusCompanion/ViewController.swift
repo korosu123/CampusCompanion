@@ -7,6 +7,12 @@
 
 import UIKit
 
+private enum DefaultsKey {
+    static let studentName = "studentName"
+    static let notificationsEnabled = "notificationsEnabled"
+    static let selectedRoleIndex = "selectedRoleIndex"
+}
+
 class ViewController: UIViewController {
 
     @IBOutlet weak var titleLabel: UILabel!
@@ -21,11 +27,36 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
         titleLabel.text = "Campus Companion"
+        restorePreferences()
     }
 
     @IBAction func exploreButtonTapped(_ sender: UIButton) {
         nameTextField.resignFirstResponder()
+        savePreferences()
         performSegue(withIdentifier: "ShowDetailSegue", sender: self)
+    }
+
+    @IBAction func resetPreferencesTapped(_ sender: UIBarButtonItem) {
+        UserDefaults.standard.removeObject(forKey: DefaultsKey.studentName)
+        UserDefaults.standard.removeObject(forKey: DefaultsKey.notificationsEnabled)
+        UserDefaults.standard.removeObject(forKey: DefaultsKey.selectedRoleIndex)
+
+        nameTextField.text = ""
+        notifySwitch.isOn = false
+        roleSegmentedControl.selectedSegmentIndex = 0
+    }
+
+    private func savePreferences() {
+        UserDefaults.standard.set(nameTextField.text ?? "", forKey: DefaultsKey.studentName)
+        UserDefaults.standard.set(notifySwitch.isOn, forKey: DefaultsKey.notificationsEnabled)
+        UserDefaults.standard.set(roleSegmentedControl.selectedSegmentIndex,
+                                  forKey: DefaultsKey.selectedRoleIndex)
+    }
+
+    private func restorePreferences() {
+        nameTextField.text = UserDefaults.standard.string(forKey: DefaultsKey.studentName) ?? ""
+        notifySwitch.isOn = UserDefaults.standard.bool(forKey: DefaultsKey.notificationsEnabled)
+        roleSegmentedControl.selectedSegmentIndex = UserDefaults.standard.integer(forKey: DefaultsKey.selectedRoleIndex)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -45,55 +45,65 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your name" translatesAutoresizingMaskIntoConstraints="NO" id="name-text-field">
-                                <rect key="frame" x="32" y="507" width="329" height="44"/>
+                                <rect key="frame" x="32" y="333" width="329" height="44"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notify me about events" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="notify-label">
-                                <rect key="frame" x="32" y="567" width="168.66666666666666" height="28"/>
+                                <rect key="frame" x="32" y="393" width="168.66666666666666" height="28"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="notify-switch">
-                                <rect key="frame" x="304" y="567" width="63" height="28"/>
+                                <rect key="frame" x="304" y="393" width="63" height="28"/>
                             </switch>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="role-segmented-control">
-                                <rect key="frame" x="32" y="611" width="329" height="33"/>
+                                <rect key="frame" x="32" y="437" width="329" height="33"/>
                                 <segments>
                                     <segment title="Student"/>
                                     <segment title="Faculty"/>
                                 </segments>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Preferred event date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="date-label">
-                                <rect key="frame" x="32" y="659" width="149" height="19.333333333333371"/>
+                                <rect key="frame" x="32" y="485" width="149" height="19.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <datePicker opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="date-picker">
-                                <rect key="frame" x="223" y="651.66666666666663" width="138" height="34.333333333333371"/>
+                                <rect key="frame" x="223" y="477.66666666666669" width="138" height="34.333333333333314"/>
                             </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of guests" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="guests-label">
-                                <rect key="frame" x="32" y="702" width="130" height="19.333333333333371"/>
+                                <rect key="frame" x="32" y="528" width="130" height="19.333333333333371"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="guest-stepper">
-                                <rect key="frame" x="267" y="695.66666666666663" width="94" height="32"/>
+                                <rect key="frame" x="267" y="521.66666666666663" width="94" height="32"/>
                             </stepper>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="explore-button">
-                                <rect key="frame" x="126.66666666666669" y="751.66666666666663" width="140" height="44"/>
+                                <rect key="frame" x="126.66666666666669" y="577.66666666666663" width="140" height="44"/>
                                 <state key="normal" title="Explore Campus"/>
                                 <connections>
                                     <action selector="exploreButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="explore-action"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OMh-BT-OEB">
+                                <rect key="frame" x="89" y="625" width="215" height="35"/>
+                                <state key="normal" title="Campus Announcements"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Campus Announcements"/>
+                                <connections>
+                                    <segue destination="announcements-view-controller" kind="show" identifier="ShowAnnouncementsSegue" id="show-announcements-button-segue"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="OMh-BT-OEB" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="announcements-button-center-x"/>
+                            <constraint firstItem="OMh-BT-OEB" firstAttribute="top" secondItem="explore-button" secondAttribute="bottom" constant="16" id="announcements-button-top"/>
                             <constraint firstItem="date-label" firstAttribute="centerY" secondItem="date-picker" secondAttribute="centerY" id="date-label-center-y"/>
                             <constraint firstItem="date-label" firstAttribute="leading" secondItem="role-segmented-control" secondAttribute="leading" id="date-label-leading"/>
                             <constraint firstItem="date-label" firstAttribute="top" secondItem="role-segmented-control" secondAttribute="bottom" constant="16" id="date-label-top"/>
@@ -131,6 +141,13 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="title-label" secondAttribute="trailing" constant="20" id="title-trailing"/>
                         </constraints>
                     </view>
+                    <navigationItem id="welcome-navigation-item">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="reset-preferences-button">
+                            <connections>
+                                <action selector="resetPreferencesTapped:" destination="BYZ-38-t0r" id="reset-preferences-action"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="datePicker" destination="date-picker" id="date-picker-outlet"/>
                         <outlet property="guestStepper" destination="guest-stepper" id="guest-outlet"/>
@@ -145,6 +162,81 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="welcome-first-responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="230" y="110"/>
+        </scene>
+        <!--Announcements View Controller-->
+        <scene sceneID="announcements-scene">
+            <objects>
+                <tableViewController id="announcements-view-controller" customClass="AnnouncementsViewController" customModule="CampusCompanion" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" title="Campus Announcements" id="announcements-navigation-item">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="add-announcement-button">
+                            <connections>
+                                <action selector="addAnnouncementTapped:" destination="announcements-view-controller" id="add-announcement-action"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" style="plain" dataMode="prototypes" separatorStyle="default" rowHeight="72" estimatedRowHeight="72" sectionHeaderHeight="0.0" sectionFooterHeight="0.0" id="announcements-table-view">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" indentationLevel="1" reuseIdentifier="AnnouncementCell" id="announcement-cell" customClass="AnnouncementCell" customModule="CampusCompanion" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="72"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" clipsSubviews="YES" id="announcement-cell-content-view">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="72"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="category-icon-image-view">
+                                            <rect key="frame" x="16" y="20" width="32" height="32"/>
+                                            <constraints>
+                                                <constraint firstAttribute="leading" secondItem="announcement-cell-content-view" secondAttribute="leading" constant="16" id="announcement-category-leading"/>
+                                                <constraint firstAttribute="centerY" secondItem="announcement-cell-content-view" secondAttribute="centerY" id="announcement-category-center-y"/>
+                                                <constraint firstAttribute="width" constant="32" id="announcement-category-width"/>
+                                                <constraint firstAttribute="height" constant="32" id="announcement-category-height"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Announcement title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="announcement-title-label">
+                                            <rect key="frame" x="64" y="16" width="313" height="22"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category • date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="announcement-date-label">
+                                            <rect key="frame" x="64" y="40" width="313" height="18"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="announcement-title-label" firstAttribute="leading" secondItem="category-icon-image-view" secondAttribute="trailing" constant="16" id="announcement-title-leading"/>
+                                        <constraint firstItem="announcement-title-label" firstAttribute="top" secondItem="announcement-cell-content-view" secondAttribute="top" constant="16" id="announcement-title-top"/>
+                                        <constraint firstItem="announcement-title-label" firstAttribute="trailing" secondItem="announcement-cell-content-view" secondAttribute="trailing" constant="-16" id="announcement-title-trailing"/>
+                                        <constraint firstItem="announcement-date-label" firstAttribute="leading" secondItem="category-icon-image-view" secondAttribute="trailing" constant="16" id="announcement-date-leading"/>
+                                        <constraint firstItem="announcement-date-label" firstAttribute="top" secondItem="announcement-title-label" secondAttribute="bottom" constant="4" id="announcement-date-top"/>
+                                        <constraint firstItem="announcement-date-label" firstAttribute="trailing" secondItem="announcement-cell-content-view" secondAttribute="trailing" constant="-16" id="announcement-date-trailing"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="categoryIconImageView" destination="category-icon-image-view" id="category-icon-outlet"/>
+                                    <outlet property="dateLabel" destination="announcement-date-label" id="announcement-date-label-outlet"/>
+                                    <outlet property="titleLabel" destination="announcement-title-label" id="announcement-title-label-outlet"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="delegate" destination="announcements-view-controller" id="announcements-delegate"/>
+                            <outlet property="dataSource" destination="announcements-view-controller" id="announcements-data-source"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outlet property="tableView" destination="announcements-table-view" id="announcements-table-outlet"/>
+                        <segue destination="detail-view-controller" kind="show" identifier="ShowAnnouncementDetailSegue" id="show-announcement-detail-segue"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="announcements-first-responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="480" y="110"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="detail-scene">
